@@ -10,7 +10,6 @@ import {
   BackHandler,
   Image,
   FlatList,
-  SafeAreaView
 } from "react-native";
 import Video from "react-native-video";
 import Slider from "react-native-sliders";
@@ -59,7 +58,7 @@ const CustomVideoPlayer = (props) => {
     alignSelf: "center",
     height: 200,
     width: 330,
-    style
+    ...style,
   };
   const landScapeStyle = {
     alignSelf: "center",
@@ -111,7 +110,7 @@ const CustomVideoPlayer = (props) => {
   }, [isPaused]);
 
   const videoHeaders = () => (
-    <SafeAreaView
+    <View
       style={{
         paddingHorizontal: 10,
         width: videoStyle.width,
@@ -148,7 +147,7 @@ const CustomVideoPlayer = (props) => {
             }}
           >
             <Image
-              source={require("../../src/assets/images/setting.png")}
+              source={require("./assets/images/setting.png")}
               style={{ width: 18, height: 18 }}
             />
           </TouchableOpacity>
@@ -170,15 +169,15 @@ const CustomVideoPlayer = (props) => {
             <Image
               source={
                 isMuted
-                  ? require("../../src/assets/images/volume-mute.png")
-                  : require("../../src/assets/images/volume.png")
+                  ? require("./assets/images/volume-mute.png")
+                  : require("./assets/images/volume.png")
               }
               style={{ width: 20, height: 20 }}
             />
           </TouchableOpacity>
         )}
       </View>
-    </SafeAreaView>
+    </View>
   );
 
   const videoCenter = () => (
@@ -199,7 +198,7 @@ const CustomVideoPlayer = (props) => {
         onPress={() => videoRef.current.seek(currentVideoDuration - 10)}
       >
         <Image
-          source={require("../../src/assets/images/ba.png")}
+          source={require("./assets/images/ba.png")}
           style={{ width: 25, height: 25 }}
         />
       </TouchableOpacity>
@@ -224,8 +223,8 @@ const CustomVideoPlayer = (props) => {
         <Image
           source={
             isPaused
-              ? require("../../src/assets/images/play2.png")
-              : require("../../src/assets/images/pause1.png")
+              ? require("./assets/images/play2.png")
+              : require("./assets/images/pause1.png")
           }
           style={{ width: 27, height: 27 }}
         />
@@ -234,7 +233,7 @@ const CustomVideoPlayer = (props) => {
         onPress={() => videoRef.current.seek(currentVideoDuration + 10)}
       >
         <Image
-          source={require("../../src/assets/images/for.png")}
+          source={require("./assets/images/for.png")}
           style={{ width: 25, height: 25 }}
         />
       </TouchableOpacity>
@@ -298,8 +297,8 @@ const CustomVideoPlayer = (props) => {
           <Image
             source={
               isVideoFullScreen
-                ? require("../../src/assets/images/full.png")
-                : require("../../src/assets/images/full.png")
+                ? require("./assets/images/full.png")
+                : require("./assets/images/full.png")
             }
             style={{ width: 18, height: 18 }}
           />
@@ -335,7 +334,7 @@ const CustomVideoPlayer = (props) => {
           }}
         >
           <Image
-            source={require("../../src/assets/images/cross.png")}
+            source={require("./assets/images/cross.png")}
             style={{ width: 20, height: 22 }}
           />
         </TouchableOpacity>
@@ -358,7 +357,7 @@ const CustomVideoPlayer = (props) => {
             }}
           >
             <Image
-              source={require("../../src/assets/images/hd.png")}
+              source={require("./assets/images/hd.png")}
               style={{ width: 26, height: 27 }}
             />
             <Text style={{ color: "white", fontSize: 13 }}>Quality</Text>
@@ -373,7 +372,7 @@ const CustomVideoPlayer = (props) => {
             }}
           >
             <Image
-              source={require("../../src/assets/images/speed.png")}//speed
+              source={require("./assets/images/speed.png")}//speed
               style={{ width: 20, height: 25 }}
             />
             <Text style={{ color: "white", fontSize: 13 }}>Speed</Text>
@@ -388,7 +387,7 @@ const CustomVideoPlayer = (props) => {
             }}
           >
             <Image
-              source={require("../../src/assets/images/volume.png")}//soundmix
+              source={require("./assets/images/volume.png")}//soundmix
               style={{ width: 20, height: 22 }}
             />
             <Text style={{ color: "white", fontSize: 13 }}>Sound</Text>
@@ -439,7 +438,7 @@ const CustomVideoPlayer = (props) => {
                         >
                           {videoQuality == item.height && (
                             <Image
-                              source={require("../../src/assets/images/full.png")}//dot
+                              source={require("./assets/images/full.png")}//dot
                               style={{ width: 10, height: 10 }}
                             />
                           )}
@@ -492,7 +491,7 @@ const CustomVideoPlayer = (props) => {
                 >
                   {videoRate == 0.5 && (
                     <Image
-                      source={require("../../src/assets/images/full.png")}//dot
+                      source={require("./assets/images/full.png")}//dot
                       style={{ width: 10, height: 10 }}
                     />
                   )}
@@ -525,7 +524,7 @@ const CustomVideoPlayer = (props) => {
                 >
                   {videoRate == 1 && (
                     <Image
-                      source={require("../../src/assets/images/full.png")}//dot
+                      source={require("./assets/images/full.png")}//dot
                       style={{ width: 10, height: 10 }}
                     />
                   )}
@@ -558,7 +557,7 @@ const CustomVideoPlayer = (props) => {
                 >
                   {videoRate == 4 && (
                     <Image
-                      source={require("../../src/assets/images/full.png")}//dot
+                      source={require("./assets/images/full.png")}//dot
                       style={{ width: 10, height: 10 }}
                     />
                   )}
@@ -636,7 +635,7 @@ const CustomVideoPlayer = (props) => {
       }}
     >
       <Image
-        source={require("../../src/assets/images/full.png")}//error
+        source={require("./assets/images/full.png")}//error
         style={{ width: 30, height: 30 }}
       />
       <Text style={{ color: "white", fontSize: 12, marginTop: 0 }}>
